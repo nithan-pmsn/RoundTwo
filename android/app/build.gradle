@@ -82,6 +82,8 @@ project.ext.react = [
 
 apply from: "../../node_modules/react-native/react.gradle"
 
+apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
+
 /**
  * Set this to true to create two separate APKs instead of one:
  *   - An APK that only works on ARM devices
@@ -181,7 +183,8 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    addUnimodulesDependencies()
+    compile project(':@react-native-community_cameraroll')
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
