@@ -1,4 +1,8 @@
 {
   "name": "ReactnativeTest",
-  "displayName": "ReactnativeTest"
+  "displayName": "ReactnativeTest",
+  "android": {
+    "package": "com.reactnativetest",
+    "googleServicesFile": "/android/app/google-services .json"
+  }
 }

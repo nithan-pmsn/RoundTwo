@@ -10,6 +10,7 @@ public class BasePackageList {
         new expo.modules.constants.ConstantsPackage(),
         new expo.modules.facebook.FacebookPackage(),
         new expo.modules.filesystem.FileSystemPackage(),
+        new expo.modules.google.signin.GoogleSignInPackage(),
         new expo.modules.permissions.PermissionsPackage()
     );
   }

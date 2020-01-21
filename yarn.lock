@@ -2493,6 +2493,13 @@ expo-file-system@~8.0.0:
   dependencies:
     uuid-js "^0.7.5"
 
+expo-google-sign-in@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/expo-google-sign-in/-/expo-google-sign-in-8.0.0.tgz#3cf50b255a947045a6961fc798978ed0aaa13251"
+  integrity sha512-QLiqrfhT9cFC1VyDA3qW0XOeHP3Q1eRRl/3OoCKjXssTLqah0RwH4v1d4w3gvqzRKW/jHvyFqAl7nGdY0pKUuA==
+  dependencies:
+    invariant "^2.2.4"
+
 expo-permissions@~8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-8.0.0.tgz#5a45e8451dd7ff37c9e6ce5e2447818372547813"

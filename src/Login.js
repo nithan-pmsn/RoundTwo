@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Button,
   View,
@@ -10,6 +10,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 import * as Facebook from 'expo-facebook';
+import * as GoogleSignIn from 'expo-google-sign-in';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
 
 function SignIn() {
 
-  async function signIn() {
+  async function FbSignIn() {
     try {
       await Facebook.initializeAsync('603864420369892');
       const {
@@ -67,14 +69,42 @@ function SignIn() {
     }
   }
 
+  async function SignInWithGoogle() {
+    try {
+      await GoogleSignIn.initAsync({
+        clientId: "389753877407-2k21ja7c4a394hqrnvc76gapgq8nee7v.apps.googleusercontent.com",
+        scopes: ["profile", "email"]
+      });
+      const { type, user } = await GoogleSignIn.signInAsync();
+      console.log(type, user, "result")
+      if (type === 'success') {
+        alert('Success ...')
+      } else {
+        alert('Must signIn ...')
+      }
+    } catch (e) {
+      console.log(e)
+      alert(`Google Login Error...`, e);
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={signIn}>
+      <TouchableOpacity onPress={FbSignIn}>
         <View style={styles.iconTextContainer}>
           <Text
             style={{ color: 'black' }}
           >
             Sign in with facebook
+          </Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={SignInWithGoogle}>
+        <View style={styles.iconTextContainer}>
+          <Text
+            style={{ color: 'black' }}
+          >
+            Sign in with Google
           </Text>
         </View>
       </TouchableOpacity>
