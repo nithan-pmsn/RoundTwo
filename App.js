@@ -10,10 +10,11 @@ import React from 'react';
 
 import ImageUpload from './src/TestImageUpload'
 import SignIn from './src/Login'
+import Map from './src/Map'
 
 const App: () => React$Node = () => {
   return (
-    <SignIn />
+    <Map />
   );
 };
 

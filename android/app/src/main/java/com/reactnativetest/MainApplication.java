@@ -2,6 +2,7 @@ package com.reactnativetest;
 
 import com.reactnativetest.generated.BasePackageList;
 
+import com.airbnb.android.react.maps.MapsPackage;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -33,6 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           new CameraRollPackage();
+          new MapsPackage();
           List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
           new ModuleRegistryAdapter(mModuleRegistryProvider)
           );
